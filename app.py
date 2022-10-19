@@ -25,14 +25,14 @@ COMMON_ARGS = {
 @st.experimental_memo
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Take Raw Fidelity Dataframe and return usable dataframe.
+    Take Raw Crypto Dataframe and return usable dataframe.
     - snake_case headers
     - Include 401k by filling na type
     - Drop Cash accounts and misc text
     - Clean $ and % signs from values and convert to floats
 
     Args:
-        df (pd.DataFrame): Raw fidelity csv data
+        df (pd.DataFrame): Raw Crypto csv data
 
     Returns:
         pd.DataFrame: cleaned dataframe with features above
@@ -65,7 +65,7 @@ def filter_data(
     Returns Dataframe with only accounts and symbols selected
 
     Args:
-        df (pd.DataFrame): clean fidelity csv data, including account_name and symbol columns
+        df (pd.DataFrame): clean Crypto csv data, including account_name and symbol columns
         account_selections (list[str]): list of account names to include
         symbol_selections (list[str]): list of symbols to include
 
@@ -81,12 +81,12 @@ def filter_data(
 
 
 def main() -> None:
-    st.header("Fidelity Account Overview :moneybag: :dollar: :bar_chart:")
+    st.header("Crypto Account Overview :moneybag: :dollar: :bar_chart:")
 
     with st.expander("How to Use This"):
         st.write(Path("README.md").read_text())
 
-    st.subheader("Upload your CSV from Fidelity")
+    st.subheader("Upload your CSV from Crypto")
     uploaded_data = st.file_uploader(
         "Drag and Drop or Click to Upload", type=".csv", accept_multiple_files=False
     )
@@ -214,7 +214,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     st.set_page_config(
-        "Fidelity Account View by Gerard Bentley",
+        "Crypto Account View by Gerard Bentley",
         "📊",
         initial_sidebar_state="expanded",
         layout="wide",
