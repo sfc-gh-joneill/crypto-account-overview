@@ -12,7 +12,6 @@ import snowflake.connector
 
 
 
-st.title('Snowflake Real-Time BI Queries Benchmarks')
 
 
 # this test conection appears to work. 
@@ -31,9 +30,13 @@ def run_query(query):
 
 data = run_query("SELECT * from CURRENCY_RATES sample(1000 rows);")
 
+
+st.title('Snowflake Real-Time BI Queries Benchmarks')
+
 # Print results.
 st.write(data)
 
+st.sidebar.subheader("Filter Displayed Currencies (but we all know its BTC or die)")
 
 
 # all OG below this line 
