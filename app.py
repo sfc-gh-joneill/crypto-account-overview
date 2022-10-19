@@ -12,8 +12,6 @@ import numpy as np
 import snowflake.connector
 
 
-
-
 # this test conection appears to work. 
 @st.experimental_singleton
 def init_connection():
@@ -28,7 +26,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-data = run_query("SELECT * from currency_rates sample(1000 rows);")
+data = run_query("SELECT * from KAFKA_BROKERAGE_EVENTS_DENORMALIZED_X sample(1000 rows);")
 
 
 st.title('Snowflake Real-Time BI Queries Benchmarks')
@@ -53,6 +51,8 @@ st.sidebar.subheader("Filter Displayed Currencies (but we all know its BTC or di
 #         "total_gain_loss_percent",
 #     ],
 # }
+
+
 
 
 # @st.experimental_memo
