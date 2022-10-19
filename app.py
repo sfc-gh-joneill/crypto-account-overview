@@ -32,8 +32,7 @@ def run_query(query):
 data = run_query("SELECT * from CURRENCY_RATES sample(1000 rows);")
 
 # Print results.
-for row in rows:
-    st.write(data)
+st.write(data)
 
 
 
