@@ -17,7 +17,7 @@ def init_connection():
         **st.secrets["snowflake"], client_session_keep_alive=True
     )
 
-
+conn = init_connection()
 
 
 
