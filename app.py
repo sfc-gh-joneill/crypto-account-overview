@@ -11,6 +11,10 @@ import plotly.express as px
 import snowflake.connector
 
 
+
+st.title('Snowflake Real-Time BI Queries Benchmarks')
+
+
 # this test conection appears to work. 
 @st.experimental_singleton
 def init_connection():
@@ -29,7 +33,7 @@ rows = run_query("SELECT * from KAFKA_BROKERAGE_EVENTS_DENORMALIZED sample(1000 
 
 # Print results.
 for row in rows:
-    st.write(f"{row[0]} has a :{row[1]}:")
+    st.write(f"{row[0]} has :{row[1]}:")
 
 
 
