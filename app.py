@@ -29,11 +29,11 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * from KAFKA_BROKERAGE_EVENTS_DENORMALIZED sample(1000 rows);")
+data = run_query("SELECT * from CURRENCY_RATES sample(1000 rows);")
 
 # Print results.
 for row in rows:
-    st.write(f"{row[0]} has :{row[1]}:")
+    st.write(data)
 
 
 
