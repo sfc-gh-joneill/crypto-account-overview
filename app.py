@@ -7,6 +7,7 @@ from st_aggrid.shared import JsCode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pandas as pd
 import plotly.express as px
+import numpy as np
 
 import snowflake.connector
 
@@ -28,7 +29,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-data = run_query("SELECT * from CURRENCY_RATES sample(1000 rows);")
+data = run_query("SELECT * from KAFKA_BROKERAGE_EVENTS_DENORMALIZED_X sample(1000 rows);")
 
 
 st.title('Snowflake Real-Time BI Queries Benchmarks')
