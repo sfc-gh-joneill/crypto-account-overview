@@ -26,7 +26,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-data = run_query("SELECT * from KAFKA_BROKERAGE_EVENTS_DENORMALIZED_X sample(1000 rows);")
+data = run_query("SELECT * from KAFKA_BROKERAGE_EVENTS_DENORMALIZED sample(1000 rows);")
 
 
 st.title('Snowflake Real-Time BI Queries Benchmarks')
